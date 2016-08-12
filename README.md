@@ -23,7 +23,7 @@ User will be able to save article searches.
 -----
 
 ### Technologies Used 
-* React.js
+* Node.js
 * Postgres SQL
 * Bootstrap
 * Library of Congress Opens Historic Newspaper API 
@@ -37,7 +37,7 @@ User will be able to save article searches.
 
 | Route | Description |
 |------|--------------|
-| /    | Will render a homepage where the user will prompt to turn on and off the lightbulb depending on what state the button will be in. |
+| /    | The users search result will be rendered here. |
 | /titles| Titles will render a json of the search results hit from user input as a "title". |
 | /user| This will render where the user will be able to login. |
 

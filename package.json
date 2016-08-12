@@ -1,0 +1,32 @@
+{
+  "name": "old-america",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisLithgow/old-america.git"
+  },
+  "keywords": [
+    "Luis",
+    "Lithgow"
+  ],
+  "author": "Luis Lithgow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LuisLithgow/old-america/issues"
+  },
+  "homepage": "https://github.com/LuisLithgow/old-america#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "dotenv": "^2.0.0",
+    "ejs": "^2.5.1",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7"
+  }
+}
