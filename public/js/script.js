@@ -31,10 +31,14 @@ $(document).ready(function() {
         console.log(art)
         let $ul = $("<ul>");
         let $leftAlign = $(".left-align");
-        let $btn = $("<button>").attr({
-                       class: 'delete-btn',
+        let $deleteBtn = $("<button>").attr({
+                       class: 'delete-btn btn btn-default',
                         key: 'delete'
                     }).text("Delete");
+        let $addBtn = $("<button>").attr({
+                       class: 'add-btn btn btn-default',
+                        key: 'add'
+                    }).text("Store");
         let $br1 = $("<br>");
         let $br2 = $("<br>");
 
@@ -43,7 +47,7 @@ $(document).ready(function() {
         let $creator = $('<li>').text("Creator : "+art.creator) ;
         let $title = $('<li>').text("Title : "+art.title) ;
 
-        $ul.append($title, $img, $publishDate, $creator, $btn, $br1, $br2)
+        $ul.append($title, $img, $publishDate, $creator, $addBtn, $deleteBtn, $br1, $br2)
         $leftAlign.append($ul)
 
 
