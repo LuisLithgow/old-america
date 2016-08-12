@@ -1,12 +1,13 @@
 $(document).ready(function() {
   console.log("Ready!")
 
-  let $input = $(".input").val();
   let $btn   = $(".btn")
-  console.log($input)
 
   $btn.on("click", (event)=> {
     event.preventDefault();
+    let $leftAlign = $(".left-align").empty()
+    let $input = $(".user-input").val();
+    console.log($input)
     console.log("clicked")
     console.log($input)
 
@@ -24,10 +25,28 @@ $(document).ready(function() {
     })
     .done(function(data) {
       console.log(data.results)
+      console.log($input)
+
       data.results.map(function(art) {
+        console.log(art)
+        let $ul = $("<ul>");
+        let $leftAlign = $(".left-align");
+        let $btn = $("<button>").attr({
+                       class: 'delete-btn',
+                        key: 'delete'
+                    }).text("Delete");
+        let $br1 = $("<br>");
+        let $br2 = $("<br>");
+
         let $img = $("<img>").attr('src', art.image.full);
-        console.log($img)
-        console.log(art.image.full)
+        let $publishDate =$('<li>').text("Publish Date : " + art.created_publish_date) ;
+        let $creator = $('<li>').text("Creator : "+art.creator) ;
+        let $title = $('<li>').text("Title : "+art.title) ;
+
+        $ul.append($title, $img, $publishDate, $creator, $btn, $br1, $br2)
+        $leftAlign.append($ul)
+
+
       })
     })
     .fail(function() {

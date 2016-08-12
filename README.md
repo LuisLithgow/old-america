@@ -1,4 +1,4 @@
-# Old-America BuzzFeed
+# Old-America PicFeed
 #### 
 
 
@@ -6,18 +6,18 @@
 
 
 ##Introduction 
-Ever been interested in searching up newspapers from early 1800's all the way to the early 20th century?
-Search no further. Old America BuzzFeed delivers information about historic newspapers and select digitized newspaper pages. 
+Ever been interested in searching up American photographs from the 1800's all the way to the early 20th century?
+Search no further. Old America PicFeed delivers information about historic drawings and photographs. 
 
 -----
 ###User Story
-User will be able to search America's historic newspaper pages from 1836-1922.
+User will be able to search America's historic drawings and photograph catalogs from before the mid 20th century.
 
-User will be able to read searched article, which provides details as dates, publisher, etc.
+User will be able to read searched drawings/photographs, which provides details as dates, images and artists.
 
 User will be able to sigup/login.
 
-User will be able to save article searches.
+User will be able to save search result(s).
 
 
 -----
