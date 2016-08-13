@@ -27,6 +27,7 @@ $(document).ready(function() {
       console.log(data.results)
       console.log($input)
 
+      // map to loop over each result from the search
       data.results.map(function(art) {
         console.log(art)
         let $ul = $("<ul>");
