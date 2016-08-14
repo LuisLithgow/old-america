@@ -1,13 +1,103 @@
 body {
-  background-color: #ffe;
+  /*background-color: #ffe;*/
+  background:linear-gradient(
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.1)
+    ), url(https://c1.staticflickr.com/3/2792/5834855181_4a2518aa3a_b.jpg) no-repeat center center fixed  ;
+  /* background-color: rgba(0,0,255,0.5);*/
+  background-repeat: no-repeat;
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  font-family: 'Pacifico', cursive !important;
+  font-size: 16px !important;
 }
+
 
 img {
-  height: 250px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
 }
 
-/*.add-btn {
-  background-color: red;
+.btn {
+  color: brown !important;
 }
-*/
+
+
+.container-fluid {
+  /*font-family: 'PT Sans' , sans-serif !important;*/
+}
+
+.left-align {
+  width: 40%;
+  /*margin-left: 30px;*/
+  border-radius: 7px;
+  font-family: 'PT Sans' , sans-serif !important;
+  color: #450b0b;
+}
+
+.right-align {
+  /*width:  40%;*/
+  /*margin-left: -30px;*/
+  border-radius: 7px;
+  margin-right: 5px;
+  font-family: 'PT Sans' , sans-serif !important;
+  color: #450b0b;
+}
+
+
+ul {
+
+  background:linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ), url(https://s-media-cache-ak0.pinimg.com/736x/83/28/15/8328156f64be106b14493fe117023646.jpg) no-repeat center center fixed  ;
+  /* background-color: rgba(0,0,255,0.5);*/
+  background-repeat: no-repeat;
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  border-radius: 4px;
+}
+.right-align {
+    /*position: absolute;*/
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+}
+
+
+.mid {
+  margin-top: 10em;
+  display: inline-block;
+
+}
+
+h3 {
+  color: brown !important;
+  /*position: absolute;*/
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+}
+
+header {
+  position: fixed;
+   border-bottom:1px solid #eb4;
+    background:#ffe;
+    padding:5px 20px;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:200;
+    width:100%;
+}
+
+
+
+
+

@@ -26,9 +26,8 @@ User will be able to save search result(s).
 * Node.js
 * Postgres SQL
 * Bootstrap
-* Library of Congress Opens Historic Newspaper API 
-    * Chronicling America (http://chroniclingamerica.loc.gov/about/api/)
-
+* Library of Congress Prints and Photographs Online Catalog API 
+    
 
 
 
