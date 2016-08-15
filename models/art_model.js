@@ -37,18 +37,40 @@ function getArt(req,res,next) {
 }
 
 function addArt(req,res,next) {
-    db.one( `INSERT INTO art ($art_title, $art_image, $art_publish_date, $art_creator)
-          VALUES ($1, $2, $3, $4)`,
-          [req.body.art_title, req.body.art_image, req.body.art_publish_date, req.body.art_creator] )
+    db.any(`
+      INSERT INTO art (art_title, art_image, art_publish_date, art_creator)
+          VALUES ($1, $2, $3, $4)
+          returning *;`,
+          [req.body.art_title, req.body.art_image, req.body.art_publish_date, req.body.art_creator])
       .then(data => {
         console.log("added artwork print to db :" + res.rows)
         res.rows = data;
         next();
     })
     .catch( error => {
-      console.log('error in adding print: ', error );
+      console.log('error in adding artwork :', error );
     });
 }
+
+
+  deleteTask(req, res, next) {
+    const aID = Number.parseInt(req.params.art_id);
+
+    _db.none(`
+      DELETE FROM tasks
+      WHERE task_id = $1
+      `, [tID])
+
+     .then( ()=>{
+        console.log('DELETE COMPLETED');
+        res.rows = tID;
+        next();
+      })
+      .catch(error=>{
+        console.error('ERROR in DELETING TASK!', error);
+        throw error;
+      })
+  }
 
 
 module.exports = { getAllArt, getArt, addArt};
