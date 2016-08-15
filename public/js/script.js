@@ -118,7 +118,7 @@ $(document).ready(function() {
 
   // POST data
     function addArt(event) {
-      console.log("post evet clicked")
+      console.log("post event clicked")
       // event.preventDefault();
 
       let $children = $(event.target).parent().children();
@@ -129,7 +129,7 @@ $(document).ready(function() {
         art_publish_date: $children.eq(2).text(),
         art_creator: $children.eq(3).text()
       }
-      console.log(data)
+      // console.log(data)
       $.post('/search/new', data)
         .done( (response)=> {
           console.log("this is the .done res "+response)
@@ -152,8 +152,9 @@ $(document).ready(function() {
     }).done(function(arguments){
       console.log(arguments);
       $(e.target).parent().remove();
+      // let $children = $(event.target).parent().children();
     })
-    }
+  }
 
 
 

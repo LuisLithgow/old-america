@@ -13,7 +13,7 @@ router.get('/', getAllArt, function(req,res){
 })
 
 
-router.get('/:aID', getArt, (req,res) => {
+router.get('/:id', getArt, (req,res) => {
   res.send( {art: res.rows} )
 });
 
@@ -23,9 +23,9 @@ router.post('/new', addArt, (req,res)=>{
   // res.redirect()
 })
 
-router.delete('/:aID', deleteArt, (req,res)=>{
+router.delete('/:id', deleteArt, (req,res)=>{
   console.log("delete route")
-  res.send(req.params.aID )
+  res.send(req.params.id )
 })
 
 module.exports = router;

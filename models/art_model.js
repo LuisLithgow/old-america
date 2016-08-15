@@ -55,16 +55,16 @@ function addArt(req,res,next) {
 
   function deleteArt(req, res, next) {
     console.log("delete model")
-    const aID = Number.parseInt(req.params.art_id);
+    const id = Number.parseInt(req.params.id);
 
-    _db.none(`
+    db.none(`
       DELETE FROM art
       WHERE art_id = $1
-      `, [aID])
-
+      `, [id])
      .then( ()=>{
         console.log('DELETE COMPLETED');
-        res.rows = aID;
+        res.rows = id;
+        console.log("this is const id "+id)
         next();
       })
       .catch(error=>{

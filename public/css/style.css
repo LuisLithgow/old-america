@@ -31,7 +31,8 @@ img {
 }
 
 .left-align {
-  width: 40%;
+  /*width: 40%;*/
+  max-width: 40%;
   /*margin-left: 30px;*/
   border-radius: 7px;
   font-family: 'PT Sans' , sans-serif !important;
@@ -40,6 +41,7 @@ img {
 
 .right-align {
   /*width:  40%;*/
+  max-width:  100%;
   /*margin-left: -30px;*/
   border-radius: 7px;
   margin-right: 5px;
