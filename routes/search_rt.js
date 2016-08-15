@@ -24,6 +24,7 @@ router.post('/new', addArt, (req,res)=>{
 })
 
 router.delete('/:aID', deleteArt, (req,res)=>{
+  console.log("delete route")
   res.send(req.params.aID )
 })
 

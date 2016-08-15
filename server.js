@@ -35,8 +35,8 @@ app.use(methodOverride('_method'));
 
 //ROUTES
 
-app.use('/', homeRoute);
 app.use('/search', searchRoute);
+app.use('/', homeRoute);
 // app.use('/user', userRoute);
 
 // app.use( express.static(path.join(__dirname, 'dist')));

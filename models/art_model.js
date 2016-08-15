@@ -54,6 +54,7 @@ function addArt(req,res,next) {
 
 
   function deleteArt(req, res, next) {
+    console.log("delete model")
     const aID = Number.parseInt(req.params.art_id);
 
     _db.none(`

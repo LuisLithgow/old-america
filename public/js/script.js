@@ -26,8 +26,9 @@ $(document).ready(function() {
 
       // map to loop over each result from the search
       data.results.map(function(art) {
-        console.log(art);
+
         let $ul = $("<ul>");
+        let $div = $("<div>") ;
         let $leftAlign = $(".left-align");
         // let $deleteBtn = $("<button>").attr({
         //                class: 'delete-btn btn btn-default',
@@ -44,13 +45,14 @@ $(document).ready(function() {
         let $creator = $('<li>').text("Creator : "+art.creator) ;
         let $title = $('<li>').text("Title : "+art.title) ;
 
-        $ul.append($title, $img, $publishDate, $creator, $br1, $br2)
-        $leftAlign.append($ul);
-        $leftAlign.append($addBtn)
+        $ul.append($title, $img, $publishDate, $creator,$addBtn)
+        $div.append($ul, $br1, $br2)
+        $leftAlign.append($div);
+        // $div.append()
 
 
-        $("add-btn").click(addArt);
       })
+      $(".add-btn").on('click', addArt);
     })
     .fail(function() {
       console.log("error");
@@ -82,9 +84,10 @@ $(document).ready(function() {
       data.art.map(function(artWork) {
         // console.log(artWork)
         let $ul = $("<ul>").addClass('right-uls');
+        let $div = $("<div>") ;
         let $rightAlign = $(".right-align");
         let $deleteBtn = $("<button>").attr({
-            "data-url":'/search'+artWork.id}).text("Delete");
+            "data-url":'/search/'+artWork.art_id}).text("Delete").addClass('btn btn-default delete-btn');
         let $br1 = $("<br>");
         let $br2 = $("<br>");
 
@@ -93,12 +96,14 @@ $(document).ready(function() {
         let $creator = $('<li>').text("Creator : "+artWork.art_creator) ;
         let $title = $('<li>').text("Title : "+artWork.art_title) ;
 
-        $ul.append($title, $img, $publishDate, $creator, $deleteBtn, $br1, $br2)
-        $rightAlign.append($ul);
+        $ul.append($title, $img, $publishDate, $creator,$deleteBtn)
+        $div.append($ul);
+        $div.append( $br1, $br2)
+        $rightAlign.append($div)
 
-        $(".delete-btn").on("click", deleteItem);
 
       })
+        $(".delete-btn").on("click", deleteItem);
        /*end of map func. */
 
     })
@@ -111,35 +116,18 @@ $(document).ready(function() {
 
 
 
-  // // POST new data
-  // $.ajax({
-  //   url: '/new',
-  //   type: 'POST',
-  //   dataType: 'json'
-  //   // data: {param1: 'value1'},
-  // })
-  // .done(function(data) {
-  //   console.log("success at posting data");
-  //   console.log(data);
-
-  // })
-  // .fail(function() {
-  //   console.log(" could not post data error");
-  // })
-
   // POST data
     function addArt(event) {
       console.log("post evet clicked")
       // event.preventDefault();
 
-      let $children = $(event.target).children() ;
-      console.log("this is the event arg: " + event)
-      console.log("this is $children " + $children)
+      let $children = $(event.target).parent().children();
+
       let data = {
-        art_title: $children.eq(0).val(),
-        art_image: $children.eq(1).val(),
-        art_publish_date: $children.eq(2).val(),
-        art_creator: $children.eq(3).val()
+        art_title: $children.eq(0).text(),
+        art_image: $children.eq(1).attr("src"),
+        art_publish_date: $children.eq(2).text(),
+        art_creator: $children.eq(3).text()
       }
       console.log(data)
       $.post('/search/new', data)
@@ -156,11 +144,12 @@ $(document).ready(function() {
   function deleteItem(e){
     // e.stopPropagation()
     console.log("clicked")
-    let url = $(e.target).attr('data-url');
+    let url = $(e.target).attr("data-url");
+    console.log(url)
     $.ajax({
       url: url,
       method: 'delete'
-    }).done(function(){
+    }).done(function(arguments){
       console.log(arguments);
       $(e.target).parent().remove();
     })
