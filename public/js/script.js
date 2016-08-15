@@ -40,8 +40,8 @@ $(document).ready(function() {
         let $br1 = $("<br>");
         let $br2 = $("<br>");
 
-        let $img = $("<img>").attr('src', art.image.full);
-        let $publishDate =$('<li>').text("Publish Date : " + art.created_publish_date) ;
+        let $img = $("<img>").attr('src', art.image.full).addClass('img-append');
+        let $publishDate =$('<li>').text("Publish Date : " + art.created_publish_date).addClass('img-append') ;
         let $creator = $('<li>').text("Creator : "+art.creator) ;
         let $title = $('<li>').text("Title : "+art.title) ;
 
@@ -49,7 +49,6 @@ $(document).ready(function() {
         $div.append($ul, $br1, $br2)
         $leftAlign.append($div);
         // $div.append()
-
 
       })
       $(".add-btn").on('click', addArt);
@@ -91,7 +90,7 @@ $(document).ready(function() {
         let $br1 = $("<br>");
         let $br2 = $("<br>");
 
-        let $img = $("<img>").attr('src', artWork.art_image);
+        let $img = $("<img>").attr('src', artWork.art_image).addClass('img-append');
         let $publishDate =$('<li>').text("Publish Date : " + artWork.art_publish_date) ;
         let $creator = $('<li>').text("Creator : "+artWork.art_creator) ;
         let $title = $('<li>').text("Title : "+artWork.art_title) ;
