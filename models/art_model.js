@@ -53,26 +53,26 @@ function addArt(req,res,next) {
 }
 
 
-  deleteTask(req, res, next) {
+  function deleteArt(req, res, next) {
     const aID = Number.parseInt(req.params.art_id);
 
     _db.none(`
-      DELETE FROM tasks
-      WHERE task_id = $1
-      `, [tID])
+      DELETE FROM art
+      WHERE art_id = $1
+      `, [aID])
 
      .then( ()=>{
         console.log('DELETE COMPLETED');
-        res.rows = tID;
+        res.rows = aID;
         next();
       })
       .catch(error=>{
-        console.error('ERROR in DELETING TASK!', error);
+        console.error('ERROR in DELETING artwork!', error);
         throw error;
       })
   }
 
 
-module.exports = { getAllArt, getArt, addArt};
+module.exports = { getAllArt, getArt, addArt, deleteArt};
 
 

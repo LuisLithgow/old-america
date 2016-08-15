@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS art ;
 
 CREATE TABLE art (
   art_id serial unique primary key,
-  art_title TEXT not null,
+  art_title TEXT ,
   art_image TEXT,
   art_publish_date varchar,
   art_creator TEXT,
