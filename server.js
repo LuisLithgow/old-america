@@ -1,9 +1,5 @@
 'use strict'
 
-const env         = process.env.NODE_ENV || 'development';
-const DEV         = env==='development';
-// const dotenv      = (DEV) ? require('dotenv').config() : undefined;
-
 const express     = require('express');
 const logger      = require('morgan');
 const path        = require('path');
@@ -15,14 +11,6 @@ const app         = express();
 const PORT        = process.argv[2] || process.env.PORT || 3000;
 const session        = require('express-session');
 const methodOverride = require('method-override');
-
-app.use(session({
-  saveUninitialized: true,
-  resave: true,
-  secret: 'sooopersekret',
-  cookie: {maxAge: 60000}
-}));
-
 
 
 app.set('view engine', 'ejs');
