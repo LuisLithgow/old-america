@@ -86,7 +86,7 @@ $(document).ready(function() {
         let $div = $("<div>") ;
         let $rightAlign = $(".right-align");
         let $deleteBtn = $("<button>").attr({
-            "data-url":'/search/'+artWork.art_id}).text("Delete").addClass('btn btn-default delete-btn');
+            "data-url":'/search/'+artWork.art_id}).text("Remove").addClass('btn btn-default delete-btn');
         let $br1 = $("<br>");
         let $br2 = $("<br>");
 
