@@ -11,7 +11,7 @@ $(document).ready(function() {
     let $input = $(".user-input").val();
 
     $.ajax({
-      url: `http://loc.gov/pictures/search/`,
+      url: `https://loc.gov/pictures/search/`,
       type: 'GET',
       dataType: 'jsonp',
       // headers:{
